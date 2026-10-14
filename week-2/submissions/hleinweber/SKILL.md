@@ -81,9 +81,17 @@ For environments without automatic browser opening:
 uv run python web.py --no-browser
 ```
 
-Open the full printed `http://127.0.0.1:8765/#...` link, including its session fragment. This is a local session token, not the API key. A new link is generated at every restart. If port 8765 is occupied, use `uv run python web.py --port 8766` and its printed link. Do not stop an unrelated process or expose the server to the network.
+Open `http://127.0.0.1:8765/`. The page sets a private session cookie; reload it after restarting. If research-agent already occupies that port, launching it again opens the existing page and returns the shell. If another program occupies port 8765, use `uv run python web.py --port 8766` and its printed link. Do not stop an unrelated process or expose the server to the network.
 
 The working folder is the terminal's current directory, shown on the page. To work in another folder, run `uv run python` followed by the absolute path to the clone's `web.py` from that folder. On Windows, `bash` runs PowerShell commands; on macOS/Linux it runs bash.
+
+On Windows, this launcher also works from outside the clone:
+
+```powershell
+& "$env:USERPROFILE\research-agent\start.ps1"
+```
+
+Adjust that path if you chose a different install folder. If local script policy blocks the launcher, use the documented `cd research-agent` and `uv run python web.py` commands instead.
 
 The terminal alternative is `uv run python agent.py`; `/quit` exits.
 
@@ -97,4 +105,4 @@ The terminal alternative is `uv run python agent.py`; `/quit` exits.
 
 Approval is required for every command. Commands time out after 60 seconds; output is limited to the last 10,000 characters. There are at most 20 tool rounds per question. Tabs share one conversation; history is in memory, and **New conversation** resets it.
 
-If Send is disabled and the page says **Disconnected**, keep the server running in its separate terminal and open the new printed link. If the model request fails, check credentials, model access, billing, and connectivity without displaying secrets. Use **New conversation** after a failed or interrupted request to restart cleanly.
+If Send is disabled and the page says **Disconnected**, keep the server running in its separate terminal and reload the page at the printed address. If the model request fails, check credentials, model access, billing, and connectivity without displaying secrets. Use **New conversation** after a failed or interrupted request to restart cleanly.
