@@ -14,6 +14,10 @@ To start any week, open the week's folder below, or its page on [class.xhelio.ai
 |---|---|---|
 | [1](week-1/) | The hardest task in your field, as an AI benchmark task | Wed Oct 7, before class |
 | [2](week-2/) | Build your own agent: a harness with one tool, `bash` | Wed Oct 14, before class |
+| [3](week-3/) | Talk to your agent from your phone, about your research: two MCP servers (Telegram, and one for your research) as plugins your harness loads | Wed Oct 21, before class |
+| [4](week-4/) | Give your agent an inbox and subagents: an email MCP server as a plugin, a hello to the class agent, and a subagent system in your harness | Wed Oct 28, before class |
+| [5](week-5/) | Keep your agent on: an outer loop woken by Telegram, email and a schedule, compaction with a memory file, limits and phone commands in code, crash recovery, and a service that runs overnight | Wed Nov 4, before class |
+| [6](week-6/) | Make your task hold: fix your week 1 task's solvability, then harden it until GPT-5.6 Sol fails on the science | Wed Nov 18, before class |
 
 ## Rules
 
@@ -26,6 +30,12 @@ To start any week, open the week's folder below, or its page on [class.xhelio.ai
 - [`tools/`](tools/): `uv run tools/hw.py`, the checklist your agent follows, and the checks CI runs on every pull request
 - [`.agents/skills/build-a-task/SKILL.md`](.agents/skills/build-a-task/SKILL.md): the guide your AI agent reads for week 1
 - [`.agents/skills/build-a-harness/SKILL.md`](.agents/skills/build-a-harness/SKILL.md): the guide your AI agent reads for week 2
+- [`.agents/skills/build-a-telegram-plugin/SKILL.md`](.agents/skills/build-a-telegram-plugin/SKILL.md): the guide your AI agent reads for week 3
+- [`.agents/skills/build-an-email-plugin/SKILL.md`](.agents/skills/build-an-email-plugin/SKILL.md): the guide your AI agent reads for week 4, parts 1–3
+- [`.agents/skills/build-subagents/SKILL.md`](.agents/skills/build-subagents/SKILL.md): the guide your AI agent reads for week 4, part 4
+- [`.agents/skills/build-always-on/SKILL.md`](.agents/skills/build-always-on/SKILL.md): the guide your AI agent reads for week 5
+- [`.agents/skills/harden-a-task/SKILL.md`](.agents/skills/harden-a-task/SKILL.md): the guide your AI agent reads for week 6
+- [`.agents/skills/check-solvability/SKILL.md`](.agents/skills/check-solvability/SKILL.md): an independent review of whether a task is solvable, for a fresh session of your agent
 
 ## License
 
