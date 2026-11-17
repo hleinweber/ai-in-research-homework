@@ -3,7 +3,7 @@
 
 ## Status
 
-Verified renewed instruction approval and prior window approval. All static checks pass with task-size25MB warning. Next student runs approve publish in own terminal to review all public files and accept MIT license. Need student AI contribution statement (Codex helped package task, generate plots, implement verifier; scientist supplied input/reference and criteria) before submit. No publication performed. (2026-10-06)
+Container validation complete: Docker Desktop4.99.0 Linux engine29.9.3; actual environment and verifier images built, solution/solve.sh run, only output copied to separate no-network verifier, 1CPU/2048MB. Oracle reward1 (6 pytest passes), missing-output nop reward0 (6 expected errors). Static checks pass with 25MB size warning. Evidence/logs saved; temp containers/artifacts removed. Direct Docker, not Harbor/CI. Next regrade previous agent output and fresh independent review; approvals/publication pending. (2026-11-16)
 
 ## Runs
 
