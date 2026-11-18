@@ -22,7 +22,7 @@ except ImportError:
 sys.path.insert(0, str(root / 'tests'))
 import test_outputs as grader
 
-raw = np.loadtxt(root / 'environment/data/input.asc')
+raw = np.loadtxt(root / 'environment/data/input.asc.gz')
 with np.load(root / 'tests/reference.npz') as bundle:
     reference = bundle['reference']
     windows = bundle['windows']
@@ -53,7 +53,7 @@ def score(name, candidate):
     }
     return errors
 
-assert np.array_equal(reference, np.loadtxt(root / 'solution/data/solution.asc'))
+assert np.array_equal(reference, np.loadtxt(root / 'solution/data/solution.asc.gz'))
 score('reference', reference)
 assert report['checks']['reference']['passes']
 # Any finite interior change must have exactly zero influence on all scores.

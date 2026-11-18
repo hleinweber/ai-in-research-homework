@@ -19,7 +19,7 @@ root = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(root / 'tests'))
 import test_outputs as grader
 assert (np.__version__, scipy.__version__, pytest.__version__) == ('2.1.3', '1.14.1', '8.4.1')
-reference = np.loadtxt(root / 'solution/data/solution.asc')
+reference = np.loadtxt(root / 'solution/data/solution.asc.gz')
 excluded = grader.straight_line_interiors(reference)
 curves = reference.copy()
 edges = np.diff(np.r_[False, excluded, False].astype(int))
@@ -49,7 +49,7 @@ with tempfile.TemporaryDirectory(prefix='ifg-pinned-verifier-') as directory:
     scratch = Path(directory)
     cases = {
         'reference': (reference, 0), 'missing_output': (None, 1),
-        'uncleaned': (np.loadtxt(root / 'environment/data/input.asc'), 1),
+        'uncleaned': (np.loadtxt(root / 'environment/data/input.asc.gz'), 1),
         'curved_excluded_interiors': (curves, 0), 'constant_offsets': (offsets, 0),
         'nonfinite_excluded_interior': (nonfinite, 1),
     }
